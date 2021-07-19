@@ -1,0 +1,46 @@
+<div class="card" style="width: 20rem;">
+  <div class="card-body">
+    <div class="card-title"></div>
+    
+    <form [formGroup]="formulario" (ngSubmit)="autenticar()">
+      <div class="form-group">
+        <input 
+          type="email" 
+          class="form-control {{  formulario.get('email').touched ? formulario.get('email').valid ? 'valido' : 'invalido' : '' }}" 
+          placeholder="E-mail"
+          formControlName="email"
+        >
+        <small *ngIf="formulario.get('email').valid && formulario.get('email').touched"
+            class="form-text text-success">Ok</small>
+          <small *ngIf="!formulario.get('email').valid && formulario.get('email').touched"
+            class="form-text text-danger">Email incorreto</small>
+      </div>
+      <div class="form-group">
+        <input 
+          type="password"
+          class="form-control {{ formulario.get('senha').touched ? !(!formulario.get('senha').valid || (senha.value.length==0)) ? 'valido' : 'invalido' : '' }}" 
+          placeholder="Senha"
+          formControlName="senha"
+          #senha
+        >
+        <small *ngIf="!(!formulario.get('senha').valid || (senha.value.length==0)) && formulario.get('senha').touched"
+            class="form-text text-success">Ok</small>
+          <small *ngIf="(!formulario.get('senha').valid || (senha.value.length==0)) && formulario.get('senha').touched"
+            class="form-text text-danger">Senha inválida</small>
+      </div>
+      <button type="submit" class="btn btn-primary btn-sm btn-block" [disabled]="!formulario.valid || (senha.value.length==0)" >Entrar</button>
+    </form>
+    <hr />
+
+    <p class="small text-danger text-center ">  {{ erro }}</p>
+
+  </div>
+</div>
+<br />
+<div class="card" style="width: 20rem;">
+  <div class="card-body">
+    <p class="card-text">
+      Não tem uma conta? <a href="#" (click)="exibirPainelCadastro()" class="card-link">Cadastre-se</a>
+    </p> 
+  </div>
+</div>

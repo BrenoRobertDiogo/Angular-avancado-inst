@@ -1,4 +1,6 @@
-# App3
+# Terceiro projtinho de Angular
+## Servidor
+O servidor funciona com o Firebase, a url e tudo está no codigo ;)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.10.
 

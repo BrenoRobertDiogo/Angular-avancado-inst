@@ -63,7 +63,6 @@ export class Bd {
                     
 
                     snapshot.forEach(childSnapshot => {
-
                         let publicacao = childSnapshot.val()
                         publicacao.key = childSnapshot.key
 

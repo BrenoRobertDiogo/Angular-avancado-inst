@@ -37,6 +37,7 @@ export class PublicacoesComponent implements OnInit {
 
   public Comentar(key: string, comentario: string): void {
     this.bd.Comentar(this.email, key, comentario)
+    this.atualizarTimeLine()
   }
 
 }
